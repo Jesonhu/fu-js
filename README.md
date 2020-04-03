@@ -2,6 +2,10 @@
 
 > JavaScript 函数式工具集合
 
+Tips:
+
++ 非全部原创, 部分其他收集而来
+
 ~~## namespace `fu`~~
 
 
