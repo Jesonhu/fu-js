@@ -13,6 +13,7 @@
  * addAssetsBaseUrlFromArray(arr1, 'src', 'http://hello.com')
  * // => [{src: 'http://hello.com/a.jpg'}, {src: 'http://hello.com/b.jpg'}, {src: 'http://hello.com/c.jpg'}]
  */
+
 // Overload:
 // function addAssetsBaseUrlFromArray(source: Array<string>, key: boolean, baseUrl: string): Array<string>
 // function addAssetsBaseUrlFromArray(source: Array<T>, key: string, baseUrl: string): Array<T>
