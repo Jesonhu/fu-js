@@ -11,7 +11,6 @@ export function extend(target) {
   for (let i = 0; i < arguments.length; i++) {
     target = _mergeProperties(target, arguments[i])
   }
-
   return target
 }
 

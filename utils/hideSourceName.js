@@ -5,8 +5,11 @@
  * @param {Array<string>} hideKeyMap 需要删除的名
  * 
  * @description 如果是 sourceObj 对象数组，只处理最外层对象的值
+ * 
+ * @dependencies
+ * [ `deepClone` ]
  */
-const hideSourceName = (sourceObj, hideKeyMap) => {
+export const hideSourceName = (sourceObj, hideKeyMap) => {
   const resData = deepClone(sourceObj);
 
   if (Array.isArray(resData)) {
@@ -25,3 +28,5 @@ const hideSourceName = (sourceObj, hideKeyMap) => {
 
   return resData;
 }
+
+export default hideSourceName
