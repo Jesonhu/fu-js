@@ -2,6 +2,8 @@
  * `rem` 单位设置.
  * 
  * `window.html` 设置 `font-size` 的大小
+ * 
+ * @desc 设置 html.body 的 fontSize,常用来使用 rem 前设置 fontSize.
  *  
  * @param {number} designWidth UI设计图片的宽度
  * @param {number} unit 单位

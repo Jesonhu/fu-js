@@ -5,6 +5,7 @@
  * @param {String} baseUrl 基础域
  * @return {String|Array<string>|Array<T>}
  * @example
+ * // Example1
  * const str1 = '<img src="/aa.png" /><span>1</span><img src="/aa.png" /><span>1</span><img src="/aa.png" />';
  * addAssetsBaseUrl(str1, false, 'http://www.baidu.com');
  * // => <img src="http://www.baidu.com/aa.png" /><span>1</span><img src="http://www.baidu.com/aa.png" /><span>1</span><img src="http://www.baidu.com/aa.png" />
@@ -24,13 +25,16 @@
  * const s = addAssetsBaseUrl(obj1, 'src', 'http://test.com')
  * => { src: 'http://test.com/a.jpg' }
  */
+
 // Overload:
-// function addAssetsBaseUrl(source: string, key: boolean, baseUrl: string): string
-// function addAssetsBaseUrl(source: Object, key: string, baseUrl: string): Object
-// function addAssetsBaseUrl(source: Array<string>, key: boolean, baseUrl: string): Array<string>
-// function addAssetsBaseUrl(source: Array<T>, key: string, baseUrl: string): Array<T>
+// Overload1: function addAssetsBaseUrl(source: string, key: boolean, baseUrl: string): string
+// Overload2: function addAssetsBaseUrl(source: Object, key: string, baseUrl: string): Object
+// Overload3: function addAssetsBaseUrl(source: Array<string>, key: boolean, baseUrl: string): Array<string>
+// Overload4: function addAssetsBaseUrl(source: Array<T>, key: string, baseUrl: string): Array<T>
+// Overload5: function addAssetsBaseUrl(source: Array<string>, key: string): Array<string>
 
 const addAssetsBaseUrl = (source, key, baseUrl) => {
+  // Overload1:
   if (typeof source === 'string') {
     return source.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, `<img src="${baseUrl}$1" />`);
   }
@@ -40,10 +44,17 @@ const addAssetsBaseUrl = (source, key, baseUrl) => {
     if (source.length === 0) {
       return source
     }
-
+    
+    // Overload3:
     if ((typeof key) === 'boolean') {
       source.forEach((i, idx) => source[idx] = `${baseUrl}${i}`)
       return source
+    }
+
+    // Overload5
+    if ((typeof key) === 'string') {
+      baseUrl = key
+      return source.map(item => (item = `${baseUrl}${item}`))
     }
 
     source.forEach((item) => item[key] = `${baseUrl}${item[key]}`)
