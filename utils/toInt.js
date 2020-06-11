@@ -1,5 +1,5 @@
 /**
- * 将字符串转化为整形.
+ * 将数字字符串转化为数字.
  * 
  * @param {Number|String} str 需要转换的字符串.
  * @return {Number}
