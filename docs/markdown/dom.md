@@ -25,14 +25,14 @@
 
 > 原生实现的移除元素拥有的某个类名
 
-+ 函数名: removeClass
++ 函数名: `removeClass`
 + [源码](https://github.com/Jesonhu/fu-js/blob/master/utils/dom/addClass.js)
 
 ## toggleClass
 
 > 原生实现元素类名切换
 
-+ 函数名: toggleClass
++ 函数名: `toggleClass`
 + [源码](https://github.com/Jesonhu/fu-js/blob/master/utils/dom/toggleClass.js)
 
 ## rem
