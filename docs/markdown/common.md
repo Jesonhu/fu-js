@@ -302,3 +302,96 @@ const r = addZero(13, 5)
 const r = addZero(13, 3)
 // => '013'
 ```
+
+## 判断数组中某项是否重复 <sup>待补充</sup>
+
++ 源码
+
+```js
+/**
+ * 判断数组中是否存在重复项.
+ * 
+ * @param {Array<string>} arr 判断数组.
+ * @return {Boolean} true: 存在重复项。false: 不存在.
+ */
+function isRepeat(arr) {
+  const hash = {}
+  for (let i in arr) {
+    if (hash[arr[i]]) {
+      return true
+    }
+    // 每项都标记为true
+    hash[arr[i]] = true
+  }
+  return false
+}
+```
+
++ 实例
+```js
+const arr1 = ['1', '2', '3', '4']
+const arr2 = ['1', '2', '3', '4', '1']
+
+isRepeat(arr1)
+// => false
+
+isRepeat(arr2)
+// => true
+```
+
+## 判断两点间方向数值 <sup>待补充</sup>
+
+知道滑动开始点与滑动结束点坐标, 获取滑动方向表示数值(1, 2, 3, 4)。使用查看 《双面人》
+
++ 源码
+
+```
+/**
+ * 判断滑动的方向
+ * @param {*} a 开始触碰点 X 坐标
+ * @param {*} r 开始触碰点 Y 坐标
+ * @param {*} e 离开触碰点 X 坐标
+ * @param {*} l 离开触碰点 Y 坐标
+ * @return {Number} s 1: 向上, 2: 向下, 3:向左, 4:向右
+ */
+function getScrollDirectionNum(a, r, e, l) {
+    /** 垂直位移距离 */
+    var o = r - l
+        /** 水平位移距离 */
+        , t = e - a
+        , s = 0;
+    if (Math.abs(t) < 2 && Math.abs(o) < 2) return s;
+    
+    var i = function (a, r) {
+        return 180 * Math.atan2(r, a) / Math.PI
+    }(t, o);
+
+    i >= -45 && i < 45 ? s = 4 : i >= 45 && i < 135 ? s = 1 : i >= -135 && i < -45 ? s = 2 : (i >= 135 && i <= 180 || i >= -180 && i < -135) && (s = 3)
+
+    return s
+}
+```
+
+## 滚动中元素属性变化值 <sup>待补充</sup>
+
+案例中有这样一个效果，当滚动(向上，向下)时，动画(前进和后退)效果。要实现这种效果，需要元素变化属性和滚动高度相关联。每滚动一定的高度，元素的属性随着变化对应的值。 主要通过下面功能函数实现关联:
+
+```js
+/** 
+ * 获取元素滚动中对应变化值
+ * 
+ * @param {Number} a 元素开始变化的滚动开始高度
+ * @param {Number} r 元素开始变化的滚动结束高度
+ * @param {Number} e 当前滚动高度
+ * @param {Number} l 元素开始变化值
+ * @param {Number} o 元素结束变化值
+ * @return {Number} 元素滚动中对应的值.
+ */
+function scrollNum(a, r, e, l, o) {
+    return l + (e - a) / (r - a) * (o - l)
+}
+```
+原理是: 通过滚动高度获取当前滚动高度在滚动范围中的 比例。通过此 比例 算出当前元素每滚动 1px 对应的属性值。使用可查看案例 `《双面人》`。这里滚动也可以横向滚动的滚动宽度。
+
+
+
