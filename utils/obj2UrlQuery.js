@@ -35,3 +35,5 @@ export function obj2UrlQuery(param, key, encode) {
   // 去掉首位的&
   return urlEncode(param, key, encode).slice(1)
 }
+
+export default obj2UrlQuery

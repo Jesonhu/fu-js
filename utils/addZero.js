@@ -17,13 +17,13 @@
  * // => '00100'
  */
 
-function addZero(num, length) {
+export function addZero(num, length) {
   // const arr = new Array(length).fill('0')
   // const arrStr = arr.join('')
   // const midStr = arrStr + num
   // return midStr.substr(-length)
 
-  return (Array(length).join("0") + num).slice(-length);
+  return (Array(length).join('0') + num).slice(-length)
 }
 
-export default addZero;
+export default addZero
