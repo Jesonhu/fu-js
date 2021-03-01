@@ -14,7 +14,7 @@ const tests = [
 ]
 
 tests.map((i, idx) => {
-  expect(`addZero: ${idx}`, () => {
+  test(`addZero: ${idx}`, () => {
     const actual = addZero(i.arg1, i.arg2)
     const result = i.result
     expect(actual).toBe(result)

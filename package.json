@@ -4,7 +4,7 @@
   "description": "fu-js",
   "main": "index.js",
   "scripts": {
-    "test": "jest --no-cache --verbose"
+    "tests": "jest --no-cache --verbose"
   },
   "repository": {
     "type": "git",
