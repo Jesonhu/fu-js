@@ -4,10 +4,12 @@
  * @param {String} className 类名
  * @see {dom}
  */
-function addClass(el, className) {
+export function addClass(el, className) {
   if (typeof el !== 'object') return;
   const isExist = el.classList.contains(className);
   if (!isExist) {
     el.classList.add(className);
   }
 }
+
+export default addClass

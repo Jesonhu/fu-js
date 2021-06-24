@@ -1,0 +1,20 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"noEmit": false,
+		"declaration": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"target": "ES5", // 目标语言的版本
+		"outDir": "dist",
+    "module": "ES2015", // UMD|amd 生成代码的模板标准
+		"removeComments": true,
+		"lib": [
+      "esnext"//es6转化成es5的环境
+    ]
+	},
+	"include": [
+		"src/*.ts",
+		"test/*.ts",
+	]
+}

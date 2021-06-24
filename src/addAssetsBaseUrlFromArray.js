@@ -18,7 +18,7 @@
 // function addAssetsBaseUrlFromArray(source: Array<string>, key: boolean, baseUrl: string): Array<string>
 // function addAssetsBaseUrlFromArray(source: Array<T>, key: string, baseUrl: string): Array<T>
 
-const addAssetsBaseUrlFromArray = (source, key, baseUrl) => {
+export const addAssetsBaseUrlFromArray = (source, key, baseUrl) => {
   // 无数据.
   if (source.length === 0) {
     return source;
@@ -34,3 +34,5 @@ const addAssetsBaseUrlFromArray = (source, key, baseUrl) => {
   });
   return source
 }
+
+export default addAssetsBaseUrlFromArray
