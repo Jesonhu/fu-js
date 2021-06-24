@@ -3,6 +3,8 @@
  * 
  * @param {String} platform 浏览器头
  */
-function isMac(platform) {
+export function isMac(platform) {
   return /Mac/.test(navigator.platform);
 }
+
+export default isMac

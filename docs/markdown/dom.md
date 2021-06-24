@@ -1,12 +1,12 @@
 # Dom 相关的功能函数
 
-## 是否为IE
+## isIE
 
 > 判断是否为 IE 浏览器，通过 `window.navigator.userAgent` 判断
 
 [源码](https://github.com/Jesonhu/fu-js/blob/master/utils/dom/isIE.js)
 
-## 是否为Mac
+## isMac
 
 > 通过 `navigator.platform` 判断是否为 Mac
 

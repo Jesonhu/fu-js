@@ -31,3 +31,5 @@ export function setRem(designWidth = 750, unit = 100) {
     doc.addEventListener('DOMContentLoaded', recalc, false);
   })(document, window, designWidth, unit);
 }
+
+export default setRem

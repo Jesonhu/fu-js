@@ -14,12 +14,12 @@
  * const arr1 = ['/a.jpg', '/b.jpg', '/c.jpg']
  * addAssetsBaseUrl(arr1, false, 'http://hello.com')
  * // => ['http://hello.com/a.jpg', 'http://hello.com/b.jpg', 'http://hello.com/c.jpg']
- * 
+ *
  * @example
  * const arr1 = [{src: '/a.jpg'}, {src: '/b.jpg'}, {src: '/c.jpg'}]
  * addAssetsBaseUrl(arr1, 'src', 'http://hello.com')
  * // => [{src: 'http://hello.com/a.jpg'}, {src: 'http://hello.com/b.jpg'}, {src: 'http://hello.com/c.jpg'}]
- * 
+ *
  * @example
  * const obj1 = { src: '/a.jpg' }
  * const s = addAssetsBaseUrl(obj1, 'src', 'http://test.com')
@@ -33,10 +33,11 @@
 // Overload4: function addAssetsBaseUrl(source: Array<T>, key: string, baseUrl: string): Array<T>
 // Overload5: function addAssetsBaseUrl(source: Array<string>, key: string): Array<string>
 
-const addAssetsBaseUrl = (source, key, baseUrl) => {
+export const addAssetsBaseUrl = (source, key, baseUrl) => {
   // Overload1:
   if (typeof source === 'string') {
-    return source.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, `<img src="${baseUrl}$1" />`);
+    if (!baseUrl) baseUrl = key
+    return source.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, `<img src="${baseUrl}$1" />`)
   }
 
   if (Array.isArray(source)) {
@@ -44,24 +45,28 @@ const addAssetsBaseUrl = (source, key, baseUrl) => {
     if (source.length === 0) {
       return source
     }
-    
+
     // Overload3:
-    if ((typeof key) === 'boolean') {
-      source.forEach((i, idx) => source[idx] = `${baseUrl}${i}`)
+    if (typeof key === 'boolean') {
+      source.forEach((i, idx) => (source[idx] = `${baseUrl}${i}`))
       return source
     }
 
     // Overload5
-    if ((typeof key) === 'string') {
-      baseUrl = key
-      return source.map(item => (item = `${baseUrl}${item}`))
+    if (typeof key === 'string') {
+      return source.map((item) => {
+        item[key] = `${baseUrl}${item[key]}`
+        return item
+      })
     }
 
-    source.forEach((item) => item[key] = `${baseUrl}${item[key]}`)
+    source.forEach((item) => (item[key] = `${baseUrl}${item[key]}`))
     return source
   }
 
-  const oldUrl = source[key];
+  const oldUrl = source[key]
   source[key] = `${baseUrl}${oldUrl}`
   return source
 }
+
+export default addAssetsBaseUrl

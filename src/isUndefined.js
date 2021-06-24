@@ -2,6 +2,8 @@
  * is Undefined
  * @params [any] checkObj 判断的对象.
  */
-function isUndefined(checkObj) {
+export function isUndefined(checkObj) {
   return checkObj === undefined ? true : false
 }
+
+export default isUndefined
