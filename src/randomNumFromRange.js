@@ -8,6 +8,8 @@
  * @example
  * randomNumFromRange(2, 3)
  */
-const randomNumFromRange = (start, end) => {
+export const randomNumFromRange = (start, end) => {
   return Math.random() * (end - start) + start
 }
+
+export default randomNumFromRange

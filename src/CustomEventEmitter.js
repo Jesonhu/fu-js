@@ -88,7 +88,7 @@
  * 需要注意的是这里的形参 e 不是传统事件处理中的 event, 而是简单处理的对象，后续可能会添加更多事件属性支持
  * 但是本事件处理器并不是为了替代原生 EventTarget, 所以当需要非常多的属性时可以考虑 EventTarget 与 [CustomEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/CustomEvent)
  */
-class CustomEventEmitter {
+export class CustomEventEmitter {
   constructor() {
     this.$_listeners = []
   }
@@ -125,3 +125,5 @@ class CustomEventEmitter {
     }
   }
 }
+
+export default CustomEventEmitter

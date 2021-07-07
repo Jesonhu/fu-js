@@ -1,4 +1,4 @@
-import chTimeHello from '../utils/chTimeHello'
+import chTimeHello from '../src/chTimeHello'
 
 test(`chTimeHello: 0`, () => {
   const hour = new Date().getHours()

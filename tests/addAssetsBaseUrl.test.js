@@ -1,4 +1,4 @@
-import addAssetsBaseUrl from '../utils/addAssetsBaseUrl'
+import addAssetsBaseUrl from '../src/addAssetsBaseUrl'
 
 const tests = [
   {
@@ -28,13 +28,9 @@ const tests = [
 ]
 
 tests.map((i, idx) => {
-  test(`addAssetsBaseUrl: ${idx}`, () => {
+  test(`addAssetsBaseUrl(用例-${idx+1}): ${idx} ${JSON.stringify(i.args)}`, () => {
     const actual = addAssetsBaseUrl.apply(null, i.args)
     const result = i.result
-    if (typeof result === 'object') {
-      expect(actual).toEqual(result)
-    } else {
-      expect(actual).toBe(result)
-    }
+    expect(actual).toEqual(result)
   })
 })

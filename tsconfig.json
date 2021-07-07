@@ -11,10 +11,14 @@
 		"removeComments": true,
 		"lib": [
       "esnext"//es6转化成es5的环境
-    ]
+    ],
+		"baseUrl": ".",
+		"paths": {
+      "@/*": ["src/*"],
+      "/#/*": ["types/*"]
+    },
 	},
 	"include": [
 		"src/*.ts",
-		"test/*.ts",
 	]
 }

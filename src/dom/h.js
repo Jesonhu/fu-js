@@ -1,3 +1,19 @@
+/**
+ * render 函数
+ * 
+ * 
+ * @param {*} tag 
+ * @param {*} attrs 
+ * @param {*} children 
+ * @returns Element
+ * @module {DOM}
+ * 
+ * @example
+ * h('span', {
+ *  class: '.test'
+ *  text: '131313'
+ * })
+ */
 export function h(tag, attrs, children) {
   const node = document.createElement(tag);
   attrs &&

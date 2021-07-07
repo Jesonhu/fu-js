@@ -54,8 +54,13 @@ export const addAssetsBaseUrl = (source, key, baseUrl) => {
 
     // Overload5
     if (typeof key === 'string') {
-      return source.map((item) => {
-        item[key] = `${baseUrl}${item[key]}`
+      return source.map((item, idx) => {
+        // addAssetsBaseUrl(['/a.jpg', '/b.jpg', '/c.jpg'], 'http://hello.com')
+        if (typeof baseUrl === 'undefined') {
+          item = `${key}${item}`
+        } else {
+          item[key] = `${baseUrl}${item[key]}`
+        }
         return item
       })
     }

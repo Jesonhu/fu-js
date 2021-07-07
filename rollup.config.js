@@ -1,8 +1,11 @@
-import typescript from 'rollup-plugin-typescript2';
 import path from 'path';
+import typescript from 'rollup-plugin-typescript2';
+import resolvePlugin from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs'
 import packageJSON from './package.json';
 import { terser } from 'rollup-plugin-terser';
 import { cloneDeep } from 'lodash';
+import { babel, getBabelOutputPlugin } from '@rollup/plugin-babel';
 const pkg = packageJSON;
 const getPath = (_path) => path.resolve(__dirname, _path);
 
@@ -13,15 +16,27 @@ const extensions = ['.js', '.ts', '.tsx'];
 const env = process.env.NODE_ENV;
 
 const outputFile = {
-	umd: packageJSON.main,
-	es: packageJSON.module
+	umd: packageJSON.umd,
+	es: packageJSON.es,
+	cjs: packageJSON.cjs
 }
-if (env === 'development') {
+let usePlugins = []
+// 开发环境
+if (env.trim().toLowerCase() == 'development') {
 	outputFile.umd = 'debug/fu.js'
-	outputFile.es = 'debug/fu.modern.js'
-}
+	outputFile.es = 'debug/fu.es.js'
+	outputFile.cjs = 'debug/fu.cjs.js'
 
-console.log('outputFile', env, outputFile)
+	// 插件设置
+	usePlugins = [
+		commonjs(),
+	]
+} else {
+	usePlugins = [
+		commonjs(),
+		terser({ compress: { drop_console: true } }),
+	]
+}
 
 // ts
 const tsPlugin = typescript({
@@ -30,36 +45,23 @@ const tsPlugin = typescript({
 });
 
 // 基础配置
-const commonConf = {
-	input: getPath('./src/main.ts'),
-	plugins: [
-		tsPlugin,
-		terser({ compress: { drop_console: true } })
-	]
-};
-
-// 需要导出的模块类型
-const outputMap = [
-	{
-		file: outputFile.umd, // 通用模块
-		format: 'umd',
-		name: pkg.name
-	},
-	{
-		file: outputFile.es, // es6模块
-		format: 'es',
-		name: pkg.name
-	}
-];
+// const commonConf = {
+// 	input: getPath('./src/main.js'),
+// 	plugins: [
+// 		// tsPlugin,
+// 		terser({ compress: { drop_console: true } })
+// 	]
+// };
 
 // 最小化版本文件头注释信息
 let authorStr = '';
+const nowYear = new Date().getFullYear()
 pkg.authors.map(i => {
 	authorStr += `* ${i} \r`;
 });
 const banner = `/*!
  * ${pkg.name} v${pkg.version}
- * (c) 2020-2021 Authors(排名不分先后):
+ * (c) 2020-${nowYear} Authors(排名不分先后):
  ${authorStr}
  *
  * Released under the ${pkg.license} License.
@@ -83,23 +85,37 @@ const minimize = (obj) => {
 	return minObj;
 };
 
-// const buildConf = (options) => Object.assign({}, commonConf, options);
+const minimizeName = (file) => {
+	const out = file.slice(0, file.lastIndexOf('.js') + '.min.js')
+	return file
+}
 
-// export default outputMap.map((output) =>
-// 	buildConf({ output: { name: packageJSON.name, ...output } })
-// );
+console.log('outputFile.umd', outputFile)
 
 export default {
-	input: resolve('src/main.ts'),
+	input: resolve('src/main.js'),
 	output: [
-		...outputMap,
-		...outputMap.map(type => {
-			type.file = resolve(type.file);
-			return minimize(type);
-		})
+		// UMD for browser-friendly build
+		{
+			name: 'fu',
+			file: minimizeName(outputFile.umd), // 通用模块
+			format: 'umd',
+			banner,
+			exports: 'named',
+		},
+		// CommonJS for Node and ES module for bundlers build
+		{
+			file: minimizeName(outputFile.es), // 通用模块
+			format: 'es',
+			banner,
+			exports: 'auto'
+		},
+		{
+			file: minimizeName(outputFile.cjs), // 通用模块
+			format: 'cjs',
+			banner,
+			exports: 'auto'
+		},
 	],
-	plugins: [
-		tsPlugin
-		// terser({ compress: { drop_console: true } })
-	]
-};
+	plugins: usePlugins
+}

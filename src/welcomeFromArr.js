@@ -7,7 +7,9 @@
  * welcomeFromArr(arr)
  * // => 随机的内容
  */
-const welcomeFromArr = (welcomArr) => {
+export const welcomeFromArr = (welcomArr) => {
   const index = Math.floor(Math.random() * welcomArr.length)
   return welcomArr[index]
 }
+
+export default welcomeFromArr

@@ -1,4 +1,4 @@
-import obj2UrlQuery from '../utils/obj2UrlQuery'
+import obj2UrlQuery from '../src/obj2UrlQuery'
 
 const tests = [
   {

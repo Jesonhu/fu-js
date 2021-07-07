@@ -1,4 +1,4 @@
-import isFunction from '../utils/isFunction'
+import isFunction from '../src/isFunction'
 
 const tests = [
   {
