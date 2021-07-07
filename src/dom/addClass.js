@@ -2,6 +2,7 @@
  * 元素样式增加.
  * @param {Element} el dom元素
  * @param {String} className 类名
+ * @module {DOM}
  * @see {dom}
  */
 export function addClass(el, className) {

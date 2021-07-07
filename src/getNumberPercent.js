@@ -9,9 +9,11 @@
  * getPercentNumber(2, 5)
  * // => '40'
  */
-  function getPercent(now, total) {
-    const percentStr = String(now / total * 100);
-    const integerNum = parseInt(percentStr);
+export function getPercent(now, total) {
+  const percentStr = String(now / total * 100);
+  const integerNum = parseInt(percentStr);
 
-    return `${integerNum}`;
-  }
+  return `${integerNum}`;
+}
+
+export default getPercent

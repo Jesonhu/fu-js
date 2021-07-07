@@ -1,4 +1,4 @@
-import addZero from '../utils/addZero'
+import addZero from '../src/addZero'
 
 const tests = [
   {

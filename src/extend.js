@@ -8,12 +8,12 @@
  * 使用 Object.assign 需要处理多层数据前台的问题，这里就自行封装了.
  *
  * @example
- * const r1 = extend({}, {person: {name: 1, age: 16}, test: { name: 'test' }}, {person: {name:2}})
+ * const r1 = extAssign({}, {person: {name: 1, age: 16}, test: { name: 'test' }}, {person: {name:2}})
  * const r2 = Object.assign({}, {person: {name: 1, age: 16}, test: { name: 'test' }}, {person: {name:2}})
  * // => r1: { person: {name: 2, age: 16}, test: {name: "test"} }
  * // => r2: { person: {name: 2}, test: {name: "test"} }
  */
-export function extend(target) {
+export function extAssign(target) {
   for (let i = 0; i < arguments.length; i++) {
     target = _mergeProperties(target, arguments[i])
   }
@@ -44,4 +44,4 @@ function _mergeProperties(target, source) {
   return target
 }
 
-export default extend
+export default extAssign

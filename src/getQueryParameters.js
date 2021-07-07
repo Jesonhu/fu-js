@@ -7,7 +7,7 @@
  * getQueryParameters(url);
  * // => { pageNo: '1', pageSize: '10' }
  */
-const getQueryParameters = (url) => {
+export const getQueryParameters = (url) => {
   const search = url.split('?')[1]
   if (!search) {
     return {}
@@ -17,3 +17,5 @@ const getQueryParameters = (url) => {
     .replace(/&/g, '","')
     .replace(/=/g, '":"') + '"}')
 }
+
+export default getQueryParameters

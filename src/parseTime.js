@@ -58,3 +58,5 @@ export function parseTime(time, pattern) {
   })
   return time_str
 }
+
+export default parseTime

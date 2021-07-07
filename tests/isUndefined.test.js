@@ -1,4 +1,4 @@
-import isUndefined from '../utils/isUndefined'
+import isUndefined from '../src/isUndefined'
 
 const tests = [
   {

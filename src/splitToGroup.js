@@ -26,7 +26,7 @@
  *   [{x: 7}, {x: 8}]
  * ]
  */
-const splitToGroup = (grouptLen, sourceArr) => {
+export const splitToGroup = (grouptLen, sourceArr) => {
   if (sourceArr.length === 0) return sourceArr;
 
   const groupItemCount = Math.ceil(sourceArr.length / grouptLen);

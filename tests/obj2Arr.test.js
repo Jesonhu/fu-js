@@ -1,4 +1,4 @@
-import obj2Arr from '../utils/obj2Arr'
+import obj2Arr from '../src/obj2Arr'
 
 const tests = [
   {

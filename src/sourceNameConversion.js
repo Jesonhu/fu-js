@@ -29,7 +29,7 @@ const nameValueConversion = (obj) => {
  * sourceNameConversion(srouce, translateMap)
  * => { nickName: 'Jeson', description: 'Colder' }
  */
-const sourceNameConversion = (sourceObj, translateMap, type = '') => {
+export const sourceNameConversion = (sourceObj, translateMap, type = '') => {
   const cloneSourceObj = JSON.parse(JSON.stringify(sourceObj));
 
   // translateMap = {} handle.
@@ -63,3 +63,5 @@ const sourceNameConversion = (sourceObj, translateMap, type = '') => {
 
   return cloneSourceObj;
 }
+
+export default sourceNameConversion

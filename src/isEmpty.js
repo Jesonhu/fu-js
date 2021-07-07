@@ -4,6 +4,8 @@
  * @param {any[]|string} data
  * @returns {boolean}
  */
-function isEmpty (data) {
+export function isEmpty (data) {
   return data.length == 0 ? true : false;
 }
+
+export default isEmpty

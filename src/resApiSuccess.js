@@ -6,7 +6,7 @@
  * @param {[Object]}  otherSet 自定义设置, 可以自定义状态码 eg: `{code: 401}`
  * @see { API }
  */
-const resApiSuccess = (data = {}, msg = '', otherSet = {}) => {
+export const resApiSuccess = (data = {}, msg = '', otherSet = {}) => {
   const SUCCESS = 0;
   const { code, customData } = otherSet;
   if (customData) {
@@ -25,3 +25,5 @@ const resApiSuccess = (data = {}, msg = '', otherSet = {}) => {
     status: true
   }
 }
+
+export default resApiSuccess
