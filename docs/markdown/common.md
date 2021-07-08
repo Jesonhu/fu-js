@@ -121,7 +121,11 @@ welcomeFromArr(arr)
 `Object.assign()` 通常用来默认对象参数的处理，但是有一些问题例如: 多层嵌套数据丢失
 
 ```js
-Object.assign({}, { person: { name: 1, age: 16 }, test: { name: 'test' } }, { person: { name: 2 } })
+Object.assign(
+  {},
+  { person: { name: 1, age: 16 }, test: { name: 'test' } },
+  { person: { name: 2 } }
+)
 // => { person: {name: 2}, test: {name: "test"} }
 ```
 

@@ -20,7 +20,7 @@
  * // => 350
  */
 function scrollNum(a, r, e, l, o) {
-  return l + ((e - a) / (r - a)) * (o - l);
+	return l + ((e - a) / (r - a)) * (o - l)
 }
 
-export default scrollNum;
+export default scrollNum

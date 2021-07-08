@@ -19,20 +19,20 @@
 // function addAssetsBaseUrlFromArray(source: Array<T>, key: string, baseUrl: string): Array<T>
 
 export const addAssetsBaseUrlFromArray = (source, key, baseUrl) => {
-  // 无数据.
-  if (source.length === 0) {
-    return source;
-  };
+	// 无数据.
+	if (source.length === 0) {
+		return source
+	}
 
-  if ((typeof key) === 'boolean') {
-    source.forEach((i, idx) => source[idx] = `${baseUrl}${i}`)
-    return source
-  }
+	if (typeof key === 'boolean') {
+		source.forEach((i, idx) => (source[idx] = `${baseUrl}${i}`))
+		return source
+	}
 
-  source.forEach((item) => {
-    item[key] = `${baseUrl}${item[key]}`
-  });
-  return source
+	source.forEach((item) => {
+		item[key] = `${baseUrl}${item[key]}`
+	})
+	return source
 }
 
 export default addAssetsBaseUrlFromArray

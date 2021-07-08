@@ -1,5 +1,3 @@
-export function sortPkgName() {
-
-}
+export function sortPkgName() {}
 
 export default sortPkgName

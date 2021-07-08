@@ -10,26 +10,26 @@
  * @return {Number} s 1: 向上, 2: 向下, 3:向左, 4:向右, 0: 无法判断方向.
  */
 function getDirectionNum(a, r, e, l) {
-  /** 垂直位移距离 */
-  var o = r - l,
-    /** 水平位移距离 */
-    t = e - a,
-    s = 0;
-  if (Math.abs(t) < 2 && Math.abs(o) < 2) return s;
+	/** 垂直位移距离 */
+	var o = r - l,
+		/** 水平位移距离 */
+		t = e - a,
+		s = 0
+	if (Math.abs(t) < 2 && Math.abs(o) < 2) return s
 
-  var i = (function (a, r) {
-    return (180 * Math.atan2(r, a)) / Math.PI;
-  })(t, o);
+	var i = (function (a, r) {
+		return (180 * Math.atan2(r, a)) / Math.PI
+	})(t, o)
 
-  i >= -45 && i < 45
-    ? (s = 4)
-    : i >= 45 && i < 135
-    ? (s = 1)
-    : i >= -135 && i < -45
-    ? (s = 2)
-    : ((i >= 135 && i <= 180) || (i >= -180 && i < -135)) && (s = 3);
+	i >= -45 && i < 45
+		? (s = 4)
+		: i >= 45 && i < 135
+		? (s = 1)
+		: i >= -135 && i < -45
+		? (s = 2)
+		: ((i >= 135 && i <= 180) || (i >= -180 && i < -135)) && (s = 3)
 
-  return s;
+	return s
 }
 
-export default getDirectionNum;
+export default getDirectionNum

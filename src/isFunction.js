@@ -5,7 +5,7 @@
  * @return {Boolean}
  */
 export function isFunction(fn) {
-  return typeof fn === 'function' ? true : false
+	return typeof fn === 'function' ? true : false
 }
 
 export default isFunction

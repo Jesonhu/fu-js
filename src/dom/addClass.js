@@ -6,11 +6,11 @@
  * @see {dom}
  */
 export function addClass(el, className) {
-  if (typeof el !== 'object') return;
-  const isExist = el.classList.contains(className);
-  if (!isExist) {
-    el.classList.add(className);
-  }
+	if (typeof el !== 'object') return
+	const isExist = el.classList.contains(className)
+	if (!isExist) {
+		el.classList.add(className)
+	}
 }
 
 export default addClass

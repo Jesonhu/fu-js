@@ -8,7 +8,10 @@
  * // => <img src="http://www.baidu.com/aa.png" /><span>1</span><img src="http://www.baidu.com/aa.png" /><span>1</span><img src="http://www.baidu.com/aa.png" />
  */
 export const addAssetsBaseUrlFromRichText = (str, baseUrl) => {
-  return str.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, `<img src="${baseUrl}$1" />`);
+	return str.replace(
+		/<img [^>]*src=['"]([^'"]+)[^>]*>/gi,
+		`<img src="${baseUrl}$1" />`
+	)
 }
 
 export default addAssetsBaseUrlFromRichText

@@ -34,44 +34,47 @@
 // Overload5: function addAssetsBaseUrl(source: Array<string>, key: string): Array<string>
 
 export const addAssetsBaseUrl = (source, key, baseUrl) => {
-  // Overload1:
-  if (typeof source === 'string') {
-    if (!baseUrl) baseUrl = key
-    return source.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, `<img src="${baseUrl}$1" />`)
-  }
+	// Overload1:
+	if (typeof source === 'string') {
+		if (!baseUrl) baseUrl = key
+		return source.replace(
+			/<img [^>]*src=['"]([^'"]+)[^>]*>/gi,
+			`<img src="${baseUrl}$1" />`
+		)
+	}
 
-  if (Array.isArray(source)) {
-    // 无数据.
-    if (source.length === 0) {
-      return source
-    }
+	if (Array.isArray(source)) {
+		// 无数据.
+		if (source.length === 0) {
+			return source
+		}
 
-    // Overload3:
-    if (typeof key === 'boolean') {
-      source.forEach((i, idx) => (source[idx] = `${baseUrl}${i}`))
-      return source
-    }
+		// Overload3:
+		if (typeof key === 'boolean') {
+			source.forEach((i, idx) => (source[idx] = `${baseUrl}${i}`))
+			return source
+		}
 
-    // Overload5
-    if (typeof key === 'string') {
-      return source.map((item, idx) => {
-        // addAssetsBaseUrl(['/a.jpg', '/b.jpg', '/c.jpg'], 'http://hello.com')
-        if (typeof baseUrl === 'undefined') {
-          item = `${key}${item}`
-        } else {
-          item[key] = `${baseUrl}${item[key]}`
-        }
-        return item
-      })
-    }
+		// Overload5
+		if (typeof key === 'string') {
+			return source.map((item, idx) => {
+				// addAssetsBaseUrl(['/a.jpg', '/b.jpg', '/c.jpg'], 'http://hello.com')
+				if (typeof baseUrl === 'undefined') {
+					item = `${key}${item}`
+				} else {
+					item[key] = `${baseUrl}${item[key]}`
+				}
+				return item
+			})
+		}
 
-    source.forEach((item) => (item[key] = `${baseUrl}${item[key]}`))
-    return source
-  }
+		source.forEach((item) => (item[key] = `${baseUrl}${item[key]}`))
+		return source
+	}
 
-  const oldUrl = source[key]
-  source[key] = `${baseUrl}${oldUrl}`
-  return source
+	const oldUrl = source[key]
+	source[key] = `${baseUrl}${oldUrl}`
+	return source
 }
 
 export default addAssetsBaseUrl

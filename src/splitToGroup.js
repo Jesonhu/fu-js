@@ -27,22 +27,22 @@
  * ]
  */
 export const splitToGroup = (grouptLen, sourceArr) => {
-  if (sourceArr.length === 0) return sourceArr;
+	if (sourceArr.length === 0) return sourceArr
 
-  const groupItemCount = Math.ceil(sourceArr.length / grouptLen);
-  const instertArr = [];
-  for (let i = 0; i < groupItemCount; i++) {
-    let arr = [];
-    instertArr.push(arr);
-  }
+	const groupItemCount = Math.ceil(sourceArr.length / grouptLen)
+	const instertArr = []
+	for (let i = 0; i < groupItemCount; i++) {
+		let arr = []
+		instertArr.push(arr)
+	}
 
-  sourceArr.map((i, idx) => {
-    const gIdx = Math.floor(idx / grouptLen);
-    instertArr[gIdx].push(i);
-    return "";
-  });
+	sourceArr.map((i, idx) => {
+		const gIdx = Math.floor(idx / grouptLen)
+		instertArr[gIdx].push(i)
+		return ''
+	})
 
-  return instertArr;
-};
+	return instertArr
+}
 
-export default splitToGroup;
+export default splitToGroup

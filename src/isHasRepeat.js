@@ -18,15 +18,15 @@
  * // => true
  */
 function isHasRepeat(arr) {
-  const hash = {};
-  for (let i in arr) {
-    if (hash[arr[i]]) {
-      return true;
-    }
-    // 每项都标记为true
-    hash[arr[i]] = true;
-  }
-  return false;
+	const hash = {}
+	for (let i in arr) {
+		if (hash[arr[i]]) {
+			return true
+		}
+		// 每项都标记为true
+		hash[arr[i]] = true
+	}
+	return false
 }
 
-export default isHasRepeat;
+export default isHasRepeat
