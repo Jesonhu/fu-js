@@ -582,5 +582,143 @@ declare namespace fu {
   }
 }
 
+// dom/addClass
+declare namespace fu {
+  interface FuStatic {
+    /**
+     * 元素样式增加.
+     * @param {Element} el dom元素
+     * @param {String} className 类名
+     * @module {DOM}
+     * @see {dom}
+     */
+    addClass(el: Element, className: string): Element
+  }
+}
+
+// dom/elementScrollToBottom
+declare namespace fu {
+  interface FuStatic {
+    /**
+     * 将元素滚动到底部.
+     *
+     * @module {DOM}
+     * @example
+     * selector = '.test'
+     * elementScrollToBottom(selector)
+     * 如果当前元素满足滚动到底部条件(内容超出自身高度出现了滚动条)则会滚动到底部.
+     *
+     */
+    elementScrollToBottom(selector: string): void
+  }
+}
+
+// dom/h
+declare namespace fu {
+  interface FuStatic {
+    /**
+     * render 函数
+     *
+     *
+     * @param {*} tag
+     * @param {*} attrs
+     * @param {*} children
+     * @returns Element
+     * @module {DOM}
+     *
+     * @example
+     * h('span', {
+     *  class: '.test'
+     *  text: '131313'
+     * })
+     */
+    h(tag: string, attrs?: any, children?: any): Element
+  }
+}
+
+// dom/isIE
+declare namespace fu {
+  interface FuStatic {
+    /**
+     * 判断是否为IE浏览器
+     */
+    isIE(): boolean
+  }
+}
+
+// dom/isMac
+declare namespace fu {
+  interface FuStatic {
+    /**
+     * 判断是否为Mac浏览器
+     */
+    isMac(): boolean
+  }
+}
+
+// dom/removeClass
+declare namespace fu {
+  interface FuStatic {
+    /**
+     * 元素样式删除.
+     * @param {Element} el dom 元素
+     * @param {String} className 类名
+     * @see {dom}
+     */
+    removeClass(el: Element, className: string): void
+  }
+}
+
+// dom/setRem
+declare namespace fu {
+  interface FuStatic {
+    /**
+     * `rem` 单位设置.
+     *
+     * `window.html` 设置 `font-size` 的大小
+     *
+     * @desc 设置 html.body 的 fontSize,常用来使用 rem 前设置 fontSize.
+     *
+     * @param {number} designWidth UI设计图片的宽度，默认值为 750
+     * @param {number} unit 单位，默认值为 100
+     *
+     * @link Document
+     * @desc setRem(640) => `width:640px` `font-size:50px;`
+     * @desc setRem(750) => `width:750px` `font-size:50px;`
+     *
+     */
+     setRem(designWidth?: number, unit?: number): void
+  }
+}
+
+
+// version
+declare namespace fu {
+  interface FuStatic {
+    /** 版本号 */
+    version: string
+  }
+}
+
+// fu.basic
+declare namespace fu {
+  interface FuStatic {
+    basic: FuStatic
+  }
+}
+
+// fu.dom
+declare namespace fu {
+  interface FuStatic {
+    dom: FuStatic
+  }
+}
+
+// fu.node
+declare namespace fu {
+  interface FuStatic {
+    node: FuStatic
+  }
+}
 
 export default fu

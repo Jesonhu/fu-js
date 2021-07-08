@@ -1,6 +1,6 @@
 {
   "name": "@ysorg/fu",
-  "version": "0.3.0-Beta.4",
+  "version": "0.3.0-Beta.5",
   "description": "Functional Utils",
   "main": "dist/fu.js",
   "umd": "dist/fu.js",
