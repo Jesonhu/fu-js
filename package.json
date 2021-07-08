@@ -1,12 +1,12 @@
 {
   "name": "@ysorg/fu",
-  "version": "0.3.0-Beta.1",
+  "version": "0.3.0-Beta.4",
   "description": "Functional Utils",
   "main": "dist/fu.js",
   "umd": "dist/fu.js",
   "es": "dist/fu.es.js",
   "cjs": "dist/fu.cjs.js",
-  "typings": "index.d.ts",
+  "typings": "types/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "docs": "documentation readme src/main.ts --section API -q --parse-extension ts",
