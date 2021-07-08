@@ -94,7 +94,7 @@ const allModules = {
 }
 
 const fu = {
-	version: '0.3.0-Beta.5',
+	version: '0.4.0',
 	...allModules.basic,
 	...allModules.dom,
 	...allModules.node,
