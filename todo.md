@@ -5,5 +5,19 @@
 处理下面的情况
 
 ```js
-addAssetsBaseUrl({src: '111'}, '11', '11')
+addAssetsBaseUrl({ src: '111' }, '11', '11')
 ```
+
+
+## 待实现
+
++ [ ] sprintf: 字符串格式化
++ [ ] accAdd: 加法
++ [ ] accSubtr: 减法
++ [ ] accMul: 乘法
++ [ ] accDiv: 除法
++ [ ] numSplit: 数字切割，可以实现千分化和其他格式
++ [ ] checkNumber
++ [ ] hideSourceName 改名为 Omit
+
+

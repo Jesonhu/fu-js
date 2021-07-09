@@ -29,6 +29,7 @@ console.log(version)
 ```
 
 CJS
+
 ```js
 const fu = require('@ysorg/fu').default
 console.log(fu)
@@ -49,7 +50,6 @@ console.log(version)
 </script>
 ```
 
-
 ## Features
 
 - [x] 浏览器环境支持 window.fu 方式使用
@@ -67,3 +67,4 @@ console.log(version)
 - [fehelper](https://github.com/Jesonhu/js-utils-helper)
 - [Rollup-配置参考]
   - [dayjs](https://github.com/iamkun/dayjs/blob/dev/build/rollup.config.js)
+- lodash

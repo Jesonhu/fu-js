@@ -1,4 +1,7 @@
 // #Ignore artifacts
 debug
 dist
+tests
+
+// #Ignore files
 *.lock

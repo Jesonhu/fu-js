@@ -14,6 +14,7 @@ import hideSourceName from './hideSourceName'
 import isEmpty from './isEmpty'
 import isFunction from './isFunction'
 import isUndefined from './isUndefined'
+import list2Tree from './list2Tree'
 import numPrecision from './numPrecision'
 import obj2Arr from './obj2Arr'
 import obj2UrlQuery from './obj2UrlQuery'
@@ -60,6 +61,7 @@ const allModules = {
 		isEmpty: isEmpty,
 		isFunction: isFunction,
 		isUndefined: isUndefined,
+		list2Tree: list2Tree,
 		numPrecision: numPrecision,
 		obj2Arr: obj2Arr,
 		obj2UrlQuery: obj2UrlQuery,
