@@ -19,5 +19,10 @@ addAssetsBaseUrl({ src: '111' }, '11', '11')
 + [ ] numSplit: 数字切割，可以实现千分化和其他格式
 + [ ] checkNumber
 + [ ] hideSourceName 改名为 Omit
++ [ ] isNull
++ [ ] isArray
++ [ ] isNil - Checks if `value` is `null` or `undefined`.
++ [ ] isObject - Checks if `value` is the Object
++ [ ] isObjectLike - _.isObjectLike()
 
 
