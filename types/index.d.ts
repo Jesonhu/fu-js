@@ -156,6 +156,46 @@ declare namespace fu {
 	}
 }
 
+// basic/accAdd
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 精确加法运算
+		 */
+		accAdd(arg1: number, arg2: number, pN?: number): number
+	}
+}
+
+// basic/accSubtr
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 精确减法运算
+		 */
+		accSubtr(arg1: number, arg2: number): number
+	}
+}
+
+// basic/accMul
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 精确乘法运算
+		 */
+		accMul(arg1: number, arg2: number, decLen?: number, pType?: string): number
+	}
+}
+
+// basic/accDiv
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 精确除法运算
+		 */
+		accDiv(arg1: number, arg2: number, decLen?: number): number
+	}
+}
+
 // chTimeHello
 declare namespace fu {
 	/**
@@ -165,6 +205,23 @@ declare namespace fu {
 	 */
 	interface FuStatic {
 		chTimeHello(): string
+	}
+}
+
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 判断输入的是否为数字且返回需要的格式的数字；
+		 * 正确返回数字格式的数字，不满足返回字符串
+		 * @Tips: 如果输入小数位，将采取舍入的方式格式化为小数位数格式 eg.(2位小数) 1.02323232 => 1.02; 1.09999 => 1.09
+		 *
+		 * @param {Any} num 需要判断的数字
+		 * @param {[Number]} min 数字所在区间的最小值
+		 * @param {[Number]} max 数字所在区间的最大值
+		 * @param {[Number]} decLen 小数位数
+		 * @return Number|String
+		 */
+		checkNumber(num: any, min?: number, max?: number, decLen): number | string
 	}
 }
 
@@ -396,7 +453,7 @@ declare namespace fu {
 declare namespace fu {
 	interface FuStatic {
 		/**
-		 * 构造树型结构数据
+		 * 列表格式化为树型结构数据
 		 * @param {*} data 数据源
 		 * @param {*} id id字段 默认 'id'
 		 * @param {*} parentId 父节点字段 默认 'parentId'

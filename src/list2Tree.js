@@ -1,5 +1,5 @@
 /**
- * 构造树型结构数据
+ * 列表格式化为树型结构数据
  * @param {*} data 数据源
  * @param {*} id id字段 默认 'id'
  * @param {*} parentId 父节点字段 默认 'parentId'

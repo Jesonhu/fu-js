@@ -3,8 +3,13 @@ import addAssetsBaseUrlFromArray from './addAssetsBaseUrlFromArray'
 import addAssetsBaseUrlFromObject from './addAssetsBaseUrlFromObject'
 import addAssetsBaseUrlFromRichText from './addAssetsBaseUrlFromRichText'
 import addZero from './addZero'
+import accAdd from './accAdd'
+import accDiv from './accDiv'
+import accMul from './accMul'
+import accSubtr from './accSubtr'
 import chTimeHello from './chTimeHello'
 import CustomEventEmitter from './CustomEventEmitter'
+import checkNumber from './checkNumber'
 import deepClone from './deepClone'
 import extend from './extend'
 import getNumberPercent from './getNumberPercent'
@@ -50,8 +55,14 @@ const allModules = {
 		addAssetsBaseUrlFromObject: addAssetsBaseUrlFromObject,
 		addAssetsBaseUrlFromRichText: addAssetsBaseUrlFromRichText,
 		addZero: addZero,
+		accAdd: accAdd,
+		accSubtr: accSubtr,
+		accMul: accMul,
+		accDiv: accDiv,
 		chTimeHello: chTimeHello,
+		checkNumber: checkNumber,
 		CustomEventEmitter: CustomEventEmitter,
+		checkNumber: checkNumber,
 		deepClone: deepClone,
 		extend: extend,
 		getNumberPercent: getNumberPercent,
@@ -96,7 +107,7 @@ const allModules = {
 }
 
 const fu = {
-	version: '0.4.0',
+	version: '0.5.0',
 	...allModules.basic,
 	...allModules.dom,
 	...allModules.node,

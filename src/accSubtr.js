@@ -5,6 +5,8 @@
   调用：Calc.Sub(arg1,arg2)
   返回值：两数相减的结果
   */
-  export function accSubtr(arg1, arg2) {
-    return accAdd(arg1, -Number(arg2), arguments[2])
-  }
+export function accSubtr(arg1, arg2) {
+	return accAdd(arg1, -Number(arg2), arguments[2])
+}
+
+export default accSubtr

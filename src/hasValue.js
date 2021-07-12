@@ -1,8 +1,7 @@
-
 // /**
 //  * 判断一个数是否为对象格式
-//  * @param {*} value 
-//  * @returns 
+//  * @param {*} value
+//  * @returns
 //  * @inspire lodash.isObjectLike
 //  * @example
 //  *
@@ -21,7 +20,6 @@
 //  function isObjectLike(value) {
 //   return value != null && typeof value == 'object'
 // }
-
 
 // /** Detect free variable `global` from Node.js. */
 // var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -116,13 +114,12 @@
 // var boolTag = '[object Boolean]';
 // /**
 //  * 是否为布尔值
-//  * 
+//  *
 //  * @inspire loadash.isBoolean
 //  */
 // function isBoolean(val) {
 //   return value === true || value === false || (isObjectLike(value) && baseGetTag(value) == boolTag);
 // }
-
 
 // /** `Object#toString` result references. */
 // var numberTag = '[object Number]';
@@ -200,7 +197,6 @@
 //   return value === undefined;
 // }
 
-
 // /** `Object#toString` result references. */
 // var dateTag = '[object Date]';
 
@@ -276,7 +272,6 @@
 //  * // => false
 //  */
 // var isDate = nodeIsDate ? baseUnary(nodeIsDate) : baseIsDate;
-
 
 // /** `Object#toString` result references. */
 // var mapTag = '[object Map]',
