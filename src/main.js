@@ -11,6 +11,7 @@ import chTimeHello from './chTimeHello'
 import CustomEventEmitter from './CustomEventEmitter'
 import checkNumber from './checkNumber'
 import deepClone from './deepClone'
+import debounce from './debounce'
 import extend from './extend'
 import getNumberPercent from './getNumberPercent'
 import getPaginationPageCount from './getPaginationPageCount'
@@ -31,6 +32,7 @@ import resApiSuccess from './resApiSuccess'
 import sourceNameConversion from './sourceNameConversion'
 import splitToGroup from './splitToGroup'
 import toInt from './toInt'
+import throttle from './throttle'
 import welcomeFromArr from './welcomeFromArr'
 
 // DOM
@@ -64,6 +66,7 @@ const allModules = {
 		CustomEventEmitter: CustomEventEmitter,
 		checkNumber: checkNumber,
 		deepClone: deepClone,
+		debounce: debounce,
 		extend: extend,
 		getNumberPercent: getNumberPercent,
 		getPaginationPageCount: getPaginationPageCount,
@@ -84,6 +87,7 @@ const allModules = {
 		sourceNameConversion: sourceNameConversion,
 		splitToGroup: splitToGroup,
 		toInt: toInt,
+		throttle: throttle,
 		welcomeFromArr: welcomeFromArr,
 	},
 

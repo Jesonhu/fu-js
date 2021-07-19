@@ -3,6 +3,7 @@
  * Merge the properties of one object into another.
  *
  * @param {Object} target
+ * @mdoule core
  * @description
  * Object.assign({}, {person: {name: 1, age: 16}}, {person: {name:1}})
  * 使用 Object.assign 需要处理多层数据前台的问题，这里就自行封装了.

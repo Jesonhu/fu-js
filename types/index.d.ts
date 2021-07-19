@@ -322,7 +322,7 @@ declare namespace fu {
 	}
 }
 
-// deepClone
+// basic/deepClone
 declare namespace fu {
 	interface FuStatic {
 		/**
@@ -335,7 +335,34 @@ declare namespace fu {
 	}
 }
 
-// extend
+// basic/debounce
+declare namespace fu {
+
+	interface debounceOption {
+    leading?: boolean, // 指定在延迟开始前调用
+    maxWait?: number, // func 允许被延迟的最大值。
+    trailing?: boolean // 指定在延迟结束后调用
+	}
+
+	interface FuStatic {
+		/**
+		 * 防抖函数
+		 * 
+		 * @author YSong
+		 * @see fu.throttle
+		 * @example
+		 * function sayHi() { console.log('防抖处理中) }
+		 * const inp = document.getElementById('inp');
+		 * inp.addEventListener('input', debounce(sayHi))
+		 * // => 500ms 触发一次sayHi
+		 * 
+		 */
+		debounce(fn: Function, wait?: number, options?: debounceOption): Function
+	}
+}
+
+// basic/extend
+// @core
 declare namespace fu {
 	interface FuStatic {
 		/**
@@ -662,6 +689,31 @@ declare namespace fu {
 		 * @return {Number}
 		 */
 		toInt(str: number | string): number
+	}
+}
+
+// basic/throttle
+declare namespace fu {
+	interface throttleOptions {
+		leading: boolean,  // 指定调用在节流开始前
+    trailing: boolean  // 指定调用在节流结束后
+	}
+
+	interface FuStatic {
+		/**
+		 * 节流
+		 * 
+		 * 防抖有这样一个场景，当用户一直触发某个操作不停止，理论上回调函数将永远不会触发，
+		 * 为了解决这个问题可以使用节流处理，即使操作不停止，某段时间后也要触发回调
+		 * @link https://segmentfault.com/a/1190000018428170/
+		 * @see fu.debounce
+		 * @example
+		 * function sayHi() { console.log('防抖处理中) }
+		 * const inp = document.getElementById('inp');
+		 * inp.addEventListener('input', debounce(sayHi))
+		 * // => 500ms 触发一次sayHi
+		 */
+		throttle(func: Function, wait?: number, options?: throttleOptions): Function
 	}
 }
 
