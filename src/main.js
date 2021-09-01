@@ -13,6 +13,7 @@ import checkNumber from './checkNumber'
 import deepClone from './deepClone'
 import debounce from './debounce'
 import extend from './extend'
+import forEach from './forEach'
 import getNumberPercent from './getNumberPercent'
 import getPaginationPageCount from './getPaginationPageCount'
 import getQueryParameters from './getQueryParameters'
@@ -68,6 +69,7 @@ const allModules = {
 		deepClone: deepClone,
 		debounce: debounce,
 		extend: extend,
+		forEach: forEach,
 		getNumberPercent: getNumberPercent,
 		getPaginationPageCount: getPaginationPageCount,
 		getQueryParameters: getQueryParameters,
