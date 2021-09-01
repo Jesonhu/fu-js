@@ -10,9 +10,12 @@ import accSubtr from './accSubtr'
 import chTimeHello from './chTimeHello'
 import CustomEventEmitter from './CustomEventEmitter'
 import checkNumber from './checkNumber'
+import clone from './clone'
+import cloneDeep from './cloneDeep'
 import deepClone from './deepClone'
 import debounce from './debounce'
 import extend from './extend'
+import eachTree from './eachTree'
 import forEach from './forEach'
 import getNumberPercent from './getNumberPercent'
 import getPaginationPageCount from './getPaginationPageCount'
@@ -64,11 +67,14 @@ const allModules = {
 		accDiv: accDiv,
 		chTimeHello: chTimeHello,
 		checkNumber: checkNumber,
+		clone: clone,
+		cloneDeep: cloneDeep,
 		CustomEventEmitter: CustomEventEmitter,
 		checkNumber: checkNumber,
 		deepClone: deepClone,
 		debounce: debounce,
 		extend: extend,
+		eachTree: eachTree,
 		forEach: forEach,
 		getNumberPercent: getNumberPercent,
 		getPaginationPageCount: getPaginationPageCount,

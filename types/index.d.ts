@@ -208,6 +208,7 @@ declare namespace fu {
 	}
 }
 
+// checkNumber
 declare namespace fu {
 	interface FuStatic {
 		/**
@@ -222,6 +223,32 @@ declare namespace fu {
 		 * @return Number|String
 		 */
 		checkNumber(num: any, min?: number, max?: number, decLen): number | string
+	}
+}
+
+// clone
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 对象深/浅拷贝，支持对象和数组
+		 * @param {Object} obj 
+		 * @param {[Boolean]} deep 
+		 * @returns 
+		 */
+		 clone<T extends object|Array>(obj: T, deep?: boolean): T
+	}
+}
+
+// cloneDeep
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 对象深拷贝，支持对象和数组
+		 * @param {Object} obj 
+		 * @param {[Boolean]} deep 
+		 * @returns 
+		 */
+		 cloneDeep<T extends object|Array>(obj: T): T
 	}
 }
 
@@ -381,6 +408,25 @@ declare namespace fu {
 		 * // => r2: { person: {name: 2}, test: {name: "test"} }
 		 */
 		extend<T extends object>(target: T, ...args: T[]): T
+	}
+}
+
+// forEach
+declare namespace fu {
+	interface FuStatic {
+		/**
+		 * 迭代器
+		 * @param {Object} obj 
+		 * @param {Function} iterate 
+		 * @param {[Object]} context 
+		 * @example
+		 * ```
+		 * each({a: 1, b: 2, c: 3}, (item, key) => {
+		 *  console.log(item)
+		 * })
+		 * ``` 
+		 */
+		forEach<T extends object | Array>(obj: T, iterate: Function, context?: T): T
 	}
 }
 
