@@ -50,6 +50,25 @@ console.log(version)
 </script>
 ```
 
+### 开发
+
+```
+npm i
+```
+ste1: 安装依赖
+
+```
+npm run dev
+```
+step2: 编译
+
+```
+cd debug
+live-server
+``
+step3: 打开 test.html 页面
+
+
 ## Features
 
 - [x] 浏览器环境支持 window.fu 方式使用

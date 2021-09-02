@@ -35,6 +35,7 @@ import resApiFail from './resApiFail'
 import resApiSuccess from './resApiSuccess'
 import sourceNameConversion from './sourceNameConversion'
 import splitToGroup from './splitToGroup'
+import searchTree from './searchTree'
 import toInt from './toInt'
 import throttle from './throttle'
 import welcomeFromArr from './welcomeFromArr'
@@ -94,6 +95,7 @@ const allModules = {
 		resApiSuccess: resApiSuccess,
 		sourceNameConversion: sourceNameConversion,
 		splitToGroup: splitToGroup,
+		searchTree: searchTree,
 		toInt: toInt,
 		throttle: throttle,
 		welcomeFromArr: welcomeFromArr,

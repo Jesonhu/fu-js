@@ -9,7 +9,7 @@ function eachTreeItem(parent, obj, iterate, context, path, node, parseChildren, 
     iterate.call(context, item, index, obj, paths, parent, nodes)
     if (item && parseChildren) {
       paths.push(parseChildren)
-      eachTreeItem(itme, item[parseChildren], iterate, context, paths, nodes, parseChildren, opts)
+      eachTreeItem(item, item[parseChildren], iterate, context, paths, nodes, parseChildren, opts)
     }
   })
 }
