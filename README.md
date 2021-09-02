@@ -2,6 +2,8 @@
 
 > JavaScript 函数式工具集合
 
+[API-DOC]()|[文档地址](http://static.easysolves.com/sites/fujs-api-doc/#/)
+
 Tips:
 
 - 部分功能整理收集而来

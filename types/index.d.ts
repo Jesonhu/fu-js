@@ -38,7 +38,7 @@ declare namespace fu {
 		 * @example
 		 * const obj1 = { src: '/a.jpg' }
 		 * const s = addAssetsBaseUrl(obj1, 'src', 'http://test.com')
-		 * => { src: 'http://test.com/a.jpg' }
+		 * // => { src: 'http://test.com/a.jpg' }
 		 */
 		addAssetsBaseUrl(source: string, key: boolean, baseUrl: string): string
 
@@ -421,7 +421,7 @@ declare namespace fu {
 		 * @param {[Object]} context 
 		 * @example
 		 * ```
-		 * each({a: 1, b: 2, c: 3}, (item, key) => {
+		 * forEach({a: 1, b: 2, c: 3}, (item, key) => {
 		 *  console.log(item)
 		 * })
 		 * ``` 
@@ -588,7 +588,7 @@ declare namespace fu {
 		 * @example
 		 * obj={name:'tom','class':{className:'class1'},classMates:[{name:'lily'}]};
 		 * obj2Url(obj,'stu')
-		 * => 'stu.name=tom&stu.class.className=class1&stu.classMates[0].name=lily'
+		 * //=> 'stu.name=tom&stu.class.className=class1&stu.classMates[0].name=lily'
 		 */
 		obj2UrlQuery<T extends object>(
 			param: T,
